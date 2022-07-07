@@ -1,0 +1,26 @@
+<div class="container p-4">
+    <div class="container">
+        <div>
+            <h2>Devolución</h2>
+        </div>
+        <form action="#" method="post" id="register_form">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="user_id">Número de Solapín:</label>
+                        <input type="text" class="form-control" name="user_id" required="true" pattern="\d+">
+                    </div>
+                </li>        
+
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="document_identifier">ISBN/ISSN</label>
+                        <input type="text" class="form-control" name="document_identifier" pattern="((?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+)|([0-9]{4}-[0-9]{3}[0-9xX])" required="true">
+                    </div>
+                </li>
+            </ul>
+            <br/>
+            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+        </form>
+    </div>
+</div>

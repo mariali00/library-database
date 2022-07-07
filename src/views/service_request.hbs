@@ -1,0 +1,45 @@
+<div class="container p-4">
+    <div class="container">
+        <div>
+            <h2>Petición de servicio</h2>
+        </div>
+        <form action="#" method="post">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="user">Número de solapín:</label>
+                        <input type="text" class="form-control" name="user" pattern="\d+">
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="service">Servicio:</label>
+                        <select class="form-control" name="service" required="true">
+                            {{#each services_list}}
+                            <option>{{name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="count">Cantidad:</label>
+                        <input type="number" class="form-control" name="count" required="true">
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="doc_title">Título del documento:</label>
+                        <input type="text" class="form-control" name="doc_title" required="true">
+                    </div>
+                </li>
+            </ul>
+            <br/>
+            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+        </form>
+        {{!-- <div class="card-footer">Footer</div> --}}
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="container p-4">
+    <div class="container">
+        <div>
+            <h2>Registro de usuario</h2>
+        </div>
+        <form action="#" method="post" id="register_form">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="name">Nombre:</label>
+                        <input type="text" class="form-control" name="name" required="true">
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="lastname">Apellidos:</label>
+                        <input type="text" class="form-control" name="lastname" required="true">
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="user_id">Número de Solapín:</label>
+                        <input type="text" class="form-control" name="user_id" required="true" onkeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                    </div>
+                </li>                
+
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="lastname">Tipo de usuario:</label>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="user_type" required="true"
+                                    onchange="onChangeUserType()" value="student">Estudiante
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="user_type" required="true"
+                                    onchange="onChangeUserType()" value="teacher">Profesor
+                            </label>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="group">Grupo:</label>
+                        <input type="text" class="form-control" name="group"  required="true">
+                    </div>
+                </li>
+
+                <li class="list-group-item" id="course_item" style="display: none;">
+                    <div class="form-group">
+                        <label for="course">Asignatura:</label>
+                        <input type="text" class="form-control" name="course" id="course" required="true">
+                    </div>
+                </li>
+            </ul>
+            <br/>
+            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+        </form>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    function onChangeUserType() {
+        // alert(($( "input[name=user_type]:checked" ).val() == 'student'));
+        if ($("input[name=user_type]:checked").val() == 'student') {
+            $("#course_item").hide();
+        } else {
+            $("#course_item").show();
+        }
+    }    
+</script>

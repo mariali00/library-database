@@ -1,0 +1,61 @@
+<div class="container p-4">
+    <div class="container">
+        <div>
+            <h2>Funcionalidades</h2>
+        </div>
+
+        <br/>
+        <div>
+            <h4>Servicios ofrecidos un día</h4>
+            <form action="#" method="post">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="form-group">
+                            <label for="date">Fecha</label>
+                            <input type="text" class="form-control" name="date" id="datepicker" autocomplete="off" required="true">
+                        </div>
+                    </li>
+                </ul>
+                <br />
+                <input type="hidden" name="request" value="services_by_day"/>
+                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+            </form>
+        </div>
+
+        <br/>
+        <div>
+            <h4>Servicios solicitados por un grupo</h4>
+            <form action="#" method="post">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="form-group">
+                            <label for="group">Grupo</label>
+                            <input type="text" class="form-control" name="group">
+                        </div>
+                    </li>
+                </ul>
+                <br />
+                <input type="hidden" name="request" value="services_by_group"/>
+                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+            </form>
+        </div>
+
+        <br/>
+        <div>
+            <h4>Usuarios más frecuentes</h4>
+            <form action="#" method="post">
+                <input type="hidden" name="request" value="more_often_users"/>
+                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#datepicker").datepicker({
+            format: "yyyy/mm/dd",
+            autoclose: true
+        });
+    });
+</script>

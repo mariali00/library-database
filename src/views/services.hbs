@@ -1,0 +1,27 @@
+<div class="container-fluid p-4">   
+    {{#if empty}}
+    <div class="container p-4">
+        <h1>No hay servicios disponibles</h1>
+    </div>    
+    {{else}}
+    <h1>Servicios</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Descripción</th>
+                <th>Disponibilidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each rows}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{description}}</td>
+                <td>{{availability}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    {{/if}}
+</div>

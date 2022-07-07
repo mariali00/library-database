@@ -1,0 +1,55 @@
+<div class="container p-4">
+    <div class="container">
+        <div>
+            <h2>Prestamo</h2>
+        </div>
+        <form action="#" method="post" id="register_form">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="user_id">Número de Solapín:</label>
+                        <input type="text" class="form-control" name="user_id" required="true" pattern="\d+">
+                    </div>
+                </li>                
+
+                <li class="list-group-item">
+                    <div class="form-group">
+                        <label for="lastname">Tipo de prestamo:</label>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="loan_type" required="true"
+                                    onchange="onChangeLoanType()" value="normal">Sala
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input type="radio" class="form-check-input" name="loan_type" required="true"
+                                    onchange="onChangeLoanType()" value="extern">Externo
+                            </label>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="list-group-item" id="document_identifier_item" style="display: none;">
+                    <div class="form-group">
+                        <label for="document_identifier" id="document_identifier_label"></label>
+                        <input type="text" class="form-control" name="document_identifier" required="true" pattern="((?=(?:\D*\d){10}(?:(?:\D*\d){3})?$)[\d-]+)|([0-9]{4}-[0-9]{3}[0-9xX])">
+                    </div>
+                </li>
+            </ul>
+            <br/>
+            <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function onChangeLoanType() {
+        $("#document_identifier_item").show();
+        if ($("input[name=loan_type]:checked").val() == 'normal') {            
+            $("#document_identifier_label").html("ISBN/ISSN:");
+        } else {
+            $("#document_identifier_label").html("ISBN:");
+        }
+    }    
+</script>

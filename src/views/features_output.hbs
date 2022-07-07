@@ -1,0 +1,40 @@
+<div class="container-fluid p-4">
+    <h1>{{title}}</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                {{#if services_by_day}}
+                <th>Número de Solapín</th>
+                <th>Título del documento</th>
+                <th>Nombre de Servicio</th>
+                {{/if}}
+                {{#if services_by_group}}
+                <th>Nombre de Servicio</th>
+                <th>Nombre del usuario</th>
+                <th>Fecha</th>
+                {{/if}}
+            </tr>
+        </thead>
+        <tbody>
+            {{#if services_by_day}}
+            {{#each rows}}
+            <tr>
+                <td>{{user_id}}</td>
+                <td>{{document_title}}</td>
+                <td>{{service_name}}</td>
+            </tr>
+            {{/each}}
+            {{/if}}
+
+            {{#if services_by_group}}
+            {{#each rows}}
+            <tr>
+                <td>{{service_name}}</td>
+                <td>{{username}}</td>
+                <td>{{date}}</td>
+            </tr>
+            {{/each}}            
+            {{/if}}
+        </tbody>
+    </table>
+</div>
